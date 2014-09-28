@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95EE8CA919D225F400D394F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95B11A2A19D1F94700B9D1EA /* main.cpp */; };
+		95F6A19419D8636100B63ECE /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A19119D8636100B63ECE /* lodepng.cpp */; };
+		95F6A19519D8636100B63ECE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A19319D8636100B63ECE /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95B11A2519D1F94700B9D1EA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		95B11A2719D1F94700B9D1EA /* Find7BootlogoTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Find7BootlogoTools; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B11A2A19D1F94700B9D1EA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		95F6A19119D8636100B63ECE /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
+		95F6A19219D8636100B63ECE /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
+		95F6A19319D8636100B63ECE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95B11A2419D1F94700B9D1EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95B11A1E19D1F94700B9D1EA = {
+			isa = PBXGroup;
+			children = (
+				95B11A2919D1F94700B9D1EA /* Find7BootlogoTools */,
+				95F6A19019D8636100B63ECE /* lodepng */,
+				95B11A2819D1F94700B9D1EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95B11A2819D1F94700B9D1EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95B11A2719D1F94700B9D1EA /* Find7BootlogoTools */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95B11A2919D1F94700B9D1EA /* Find7BootlogoTools */ = {
+			isa = PBXGroup;
+			children = (
+				95B11A2A19D1F94700B9D1EA /* main.cpp */,
+			);
+			path = Find7BootlogoTools;
+			sourceTree = "<group>";
+		};
+		95F6A19019D8636100B63ECE /* lodepng */ = {
+			isa = PBXGroup;
+			children = (
+				95F6A19119D8636100B63ECE /* lodepng.cpp */,
+				95F6A19219D8636100B63ECE /* lodepng.h */,
+				95F6A19319D8636100B63ECE /* README.md */,
+			);
+			path = lodepng;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95B11A2619D1F94700B9D1EA /* Find7BootlogoTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95B11A2E19D1F94700B9D1EA /* Build configuration list for PBXNativeTarget "Find7BootlogoTools" */;
+			buildPhases = (
+				95B11A2319D1F94700B9D1EA /* Sources */,
+				95B11A2419D1F94700B9D1EA /* Frameworks */,
+				95B11A2519D1F94700B9D1EA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Find7BootlogoTools;
+			productName = OnePlusOneBootConverter;
+			productReference = 95B11A2719D1F94700B9D1EA /* Find7BootlogoTools */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95B11A1F19D1F94700B9D1EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Matteo Gaggiano";
+				TargetAttributes = {
+					95B11A2619D1F94700B9D1EA = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 95B11A2219D1F94700B9D1EA /* Build configuration list for PBXProject "Find7BootlogoTools" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 95B11A1E19D1F94700B9D1EA;
+			productRefGroup = 95B11A2819D1F94700B9D1EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95B11A2619D1F94700B9D1EA /* Find7BootlogoTools */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95B11A2319D1F94700B9D1EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F6A19519D8636100B63ECE /* README.md in Sources */,
+				95EE8CA919D225F400D394F6 /* main.cpp in Sources */,
+				95F6A19419D8636100B63ECE /* lodepng.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		95B11A2C19D1F94700B9D1EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		95B11A2D19D1F94700B9D1EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		95B11A2F19D1F94700B9D1EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Find7BootlogoTools;
+			};
+			name = Debug;
+		};
+		95B11A3019D1F94700B9D1EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Find7BootlogoTools;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95B11A2219D1F94700B9D1EA /* Build configuration list for PBXProject "Find7BootlogoTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95B11A2C19D1F94700B9D1EA /* Debug */,
+				95B11A2D19D1F94700B9D1EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95B11A2E19D1F94700B9D1EA /* Build configuration list for PBXNativeTarget "Find7BootlogoTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95B11A2F19D1F94700B9D1EA /* Debug */,
+				95B11A3019D1F94700B9D1EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95B11A1F19D1F94700B9D1EA /* Project object */;
+}
