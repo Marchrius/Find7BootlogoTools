@@ -28,7 +28,7 @@
 #define uint8_t unsigned char
 #endif
 
-#define usage(x) std::cout << getexecname(x) << "\n\t-b \t Overwrite the bootlogo\n\t-f \t Overwrite the fastboot image\n\t-s \t Save raw images\n\nVersion: " VERSION " by " AUTHOR << std::endl;
+#define usage(x) std::cout << getexecname(x) << "\n\t-b \t Overwrite the bootlogo\n\t-f \t Overwrite the fastboot image (Not supported yet)\n\t-s \t Save raw images\n\nVersion: " VERSION " by " AUTHOR << std::endl;
 
 #define FILE_LEN 16777216L
 #define LOGO_START 3977216L
@@ -81,13 +81,13 @@ int main(int argc, const char * argv[]) {
     FILE *fileF = NULL;
 
     if (flashBoot) {
-        std::cout<<"Loading bootlogo.png"<<std::endl;
+        std::cout << "Loading bootlogo.png" << std::endl;
         if ((error = lodepng::decode(logoF, w, h, "bootlogo.png", LCT_RGB, 8))) {
-            std::cout << "decoder error " << error << ": " << lodepng_error_text(error) << std::endl;
+            std::cout << "Error " << error << ": " << lodepng_error_text(error) << std::endl;
             exit(EXIT_FAILURE);
         }
         if (logoF.size() != LOGO_LEN) {
-            std::cerr << "Error: the w*h of the bootlogo.png isn't 1080x1920" << std::endl;
+            std::cerr << "Error: the w*h of the bootlogo.png isn't 1440x750 8 bit RGB" << std::endl;
             exit(EXIT_FAILURE);
         }
         RGBToBGR(logoF);
@@ -98,15 +98,15 @@ int main(int argc, const char * argv[]) {
     }
     
     if (flashFast) {
-        std::cout << "Not supported yes. Exiting..."<<std::endl;
+        std::cout << "Not supported yet. Exiting..."<<std::endl;
         exit(EXIT_FAILURE);
-        std::cout<<"Loading fastboot.png"<<std::endl;
+        std::cout << "Loading fastboot.png" << std::endl;
         if ((error = lodepng::decode(fastF, w, h, "fastboot.png", LCT_RGB, 8))) {
-            std::cout << "decoder error " << error << ": " << lodepng_error_text(error) << std::endl;
+            std::cout << "Error " << error << ": " << lodepng_error_text(error) << std::endl;
             exit(EXIT_FAILURE);
         }
         if (fastF.size() != LOGO_LEN) {
-            std::cerr << "Error: the w*h of the fastboot.png isn't 350x300" << std::endl;
+            std::cerr << "Error: the w*h of the fastboot.png isn't UNKNOWN" << std::endl;
             exit(EXIT_FAILURE);
         }
         RGBToBGR(logoF);
@@ -129,24 +129,21 @@ int main(int argc, const char * argv[]) {
     }
     
     fclose(fileF);
-    bool bm = false, fm = false;
     for ( i = 0; i < FILE_LEN; i++)
     {
         if (i >= LOGO_START && i < LOGO_END && flashBoot)
         {
             fileBin[i] = logoF[i - LOGO_START]; // bootlogo image
-            if (!bm) {
-                std::cout<<"Writing bootlogo image"<<std::endl;
-                bm=true;
+            if ( i == LOGO_START ) {
+                std::cout << "Writing bootlogo image" << std::endl;
             }
         } else
         
         if (i >= FAST_START && i < FAST_END && flashFast && false /* not supported yet */)
         {
             fileBin[i] = fastF[i - FAST_START]; // fastboot logo image
-            if (!fm) {
-                std::cout<<"Writing fastboot image"<<std::endl;
-                fm=true;
+            if ( i == FAST_START ) {
+                std::cout << "Writing fastboot image" << std::endl;
             }
         }
     }
@@ -157,11 +154,12 @@ int main(int argc, const char * argv[]) {
         return errno;
     }
     
-    for ( i = 0; i < FILE_LEN; i++) {
-        fwrite(&fileBin[i], sizeof(uint8_t), 1, fileF);
+    if (fwrite(fileBin, sizeof(fileBin[0]), FILE_LEN, fileF) == FILE_LEN)
+    {
+        std::cout << "All jobs done! The file logo-modified.bin created correctly" << std::endl;
+    } else {
+        std::cout << "The file logo-modified.bin cannot be created correctly. Check directory permissions and/or disk space." << std::endl;
     }
-    
-    std::cout<<"All jobs done! The file logo-modified.bin was created correctly"<<std::endl;
     
     free(fileBin);
     
