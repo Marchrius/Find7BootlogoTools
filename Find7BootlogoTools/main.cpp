@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "../lodepng/lodepng.h"
 
@@ -61,22 +62,19 @@ void RGBToBGR(std::vector<unsigned char>& image)
 
 int main(int argc, const char * argv[]) {
     
-	long unsigned int i = 0;
+    long unsigned int i = 0;
     bool flashBoot = false, flashFast = false, saverawimages = false;
     
-	char opt = 0;
-
-    while (opt < argc) {
-        if (strcmp(argv[0], "-b") == 0) flashBoot = true;
-        if (strcmp(argv[0], "-f") == 0) flashFast = true;
-        if (strcmp(argv[0], "-s") == 0) saverawimages = true;
-        opt++;
+    for (int i = 0; i < argc; ++i) {
+        if(strcmp(argv[i], "-b") == 0) flashBoot = true;
+        if(strcmp(argv[i], "-f") == 0) flashFast = true;
+        if(strcmp(argv[i], "-s") == 0) saverawimages = true;
     }
     
-	if ( !flashBoot && !flashFast ) {
-		usage(argv[0]);
-		exit(EXIT_FAILURE);
-	}
+    if ( !flashBoot && !flashFast ) {
+        usage(argv[0]);
+        exit(EXIT_FAILURE);
+    }
     
     std::vector<unsigned char> logoF, fastF;
     unsigned int w, h, error;
