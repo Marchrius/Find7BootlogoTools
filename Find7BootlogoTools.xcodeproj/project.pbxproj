@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		95EE8CA919D225F400D394F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95B11A2A19D1F94700B9D1EA /* main.cpp */; };
 		95F6A19419D8636100B63ECE /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A19119D8636100B63ECE /* lodepng.cpp */; };
-		95F6A19519D8636100B63ECE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 95F6A19319D8636100B63ECE /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,7 +133,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F6A19519D8636100B63ECE /* README.md in Sources */,
 				95EE8CA919D225F400D394F6 /* main.cpp in Sources */,
 				95F6A19419D8636100B63ECE /* lodepng.cpp in Sources */,
 			);

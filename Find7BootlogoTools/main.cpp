@@ -78,7 +78,6 @@ int main(int argc, const char * argv[]) {
     
     std::vector<unsigned char> logoF, fastF;
     unsigned int w, h, error;
-    FILE *fileF = NULL;
 
     if (flashBoot) {
         std::cout << "Loading bootlogo.png" << std::endl;
@@ -116,19 +115,9 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    uint8_t *fileBin = (uint8_t *) malloc(sizeof(uint8_t) * FILE_LEN);
+    std::vector<uint8_t> fileBin;
+    lodepng::load_file(fileBin, "logo.bin");
     
-    fileF = fopen("logo.bin", "r");
-    if (!fileF) {
-        perror("Error while read logo.bin");
-        return errno;
-    }
-    
-    for ( i = 0; i < FILE_LEN; i++) {
-        fileBin[i] = fgetc(fileF);
-    }
-    
-    fclose(fileF);
     for ( i = 0; i < FILE_LEN; i++)
     {
         if (i >= LOGO_START && i < LOGO_END && flashBoot)
@@ -148,20 +137,11 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    fileF = fopen("logo-modified.bin", "w");
-    if (!fileF) {
-        perror("Error writing file logo-modified.bin");
-        return errno;
-    }
+    lodepng::save_file(fileBin, "logo-modified.bin");
     
-    if (fwrite(fileBin, sizeof(fileBin[0]), FILE_LEN, fileF) == FILE_LEN)
     {
         std::cout << "All jobs done! The file logo-modified.bin created correctly" << std::endl;
-    } else {
-        std::cout << "The file logo-modified.bin cannot be created correctly. Check directory permissions and/or disk space." << std::endl;
     }
-    
-    free(fileBin);
-    
+        
     return 0;
 }
